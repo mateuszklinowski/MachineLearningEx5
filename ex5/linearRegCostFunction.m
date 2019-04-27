@@ -23,7 +23,7 @@ grad = zeros(size(theta));
 J = ((1/(2*m)) * sum(((X*theta) - y).^2));
 
 
-regularizationTerm = ((lambda/(2*m))* sum(theta(2:end,:).^2));
+regularizationTerm = ((lambda/(2*m)) * sum(theta(2:end,:).^2));
 
 J = J + regularizationTerm;
 
@@ -31,10 +31,6 @@ grad = (1/m) * (((X*theta) - y)' * X) + ((lambda/m)*theta');
 
 %remove reg from thata_0
 grad(:,1) = grad(:,1) - ((lambda/m)*theta'(1));
-
-
-return;
-
 
 % =========================================================================
 
